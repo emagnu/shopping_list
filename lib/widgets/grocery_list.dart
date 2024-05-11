@@ -1,5 +1,7 @@
 //  //   ///
 //  Import LIBRARIES
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 //  Import FILES
 import '../data/dummy_items.dart';
@@ -55,7 +57,3 @@ class _GroceryListState extends State<GroceryList> {
     );
   }
 }
-// title: Text('Item ${groceryItems[index].name}'),
-//             subtitle: Text(
-//                 // '${groceryItems[index].quantity} x \$${groceryItems[index].price}'),
-//                 '${groceryItems[index].quantity} x \$${2.11}'),
