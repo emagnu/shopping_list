@@ -3,19 +3,37 @@
 import 'package:flutter/material.dart';
 //  Import FILES
 import '../data/dummy_items.dart';
+import 'new_item.dart';
 //  //   ///
 
-class GroceryList extends StatelessWidget {
+class GroceryList extends StatefulWidget {
   const GroceryList({super.key});
 
   @override
+  State<GroceryList> createState() => _GroceryListState();
+}
+
+class _GroceryListState extends State<GroceryList> {
+  @override
   Widget build(BuildContext context) {
+    void addItem() {
+      debugPrint('You tapped the add button');
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (ctx) => const NewItem(),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Your Groceries',
           style: TextStyle(color: Colors.white),
         ),
+        actions: <Widget>[
+          IconButton(onPressed: addItem, icon: const Icon(Icons.add))
+        ],
       ),
       body: ListView.builder(
         itemCount: groceryItems.length,
